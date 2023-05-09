@@ -1,4 +1,4 @@
-export type AnimalType = 'pig' | 'cow' | 'sheep'
+export type AnimalType = 'duck' | 'cow' | 'sheep'
 
 export type Animal = {
   id: number

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Animal } from '@/lib/animals'
+import React, { useContext } from 'react'
+import { Animal, AnimalsContext } from '@/lib/animals'
 import { AnimalCard } from '@/components/AnimalCard'
 import styled from 'styled-components'
 import { AddButton } from '@/components/AnimalCard'
@@ -36,8 +36,11 @@ export function AnimalsView ({
 }) {
   
   const [value, setValue] = React.useState('')
-  const types = ['cow', 'pig', 'sheep'];
+  const types = ['cow', 'duck', 'sheep'];
   const [animalsArray, setAnimalsArray] = React.useState(animals)
+  const [cowAudio] = React.useState(typeof Audio !== "undefined" && new Audio("http://www.animal-sounds.org/farm/Cow%20animals055.wav"));
+  const [duckAudio] = React.useState(typeof Audio !== "undefined" && new Audio("http://www.animal-sounds.org/farm/Duck-quacking%20animals038.wav"));
+  const [sheepAudio] = React.useState(typeof Audio !== "undefined" && new Audio("http://www.animal-sounds.org/farm/Sheep%20-%20ewe%20animals112.wav"));
   
   const handleClick = (e: any) => {
     e.preventDefault();
@@ -57,6 +60,15 @@ export function AnimalsView ({
     setAnimalsArray(newAnimalsArray);
   }
 
+  const handleSound = (type: string) => {
+    if (type === 'duck')
+      duckAudio.play()
+    if (type === 'cow')
+      cowAudio.play()
+    if (type === 'sheep')
+      sheepAudio.play()
+  }
+
   return (
     <PageWrapper>
       <CardsWrapper>
@@ -67,6 +79,7 @@ export function AnimalsView ({
             name={animal.name} 
             type={animal.type}
             handleDelete={() => handleDelete(animal.id)}
+            handleSound={() => handleSound(animal.type)}
           />
         ))}
       </CardsWrapper>

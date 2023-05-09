@@ -76,14 +76,16 @@ type AnimalCardProps = {
     type: string;
     id: number;
     handleDelete: any;
+    handleSound: any;
 }
 
-export const AnimalCard = ({name, id, type, handleDelete}: AnimalCardProps) => {
+export const AnimalCard = ({name, id, type, handleDelete, handleSound}: AnimalCardProps) => {
+
     return (
         <CardWrapper key={id}>
             <CardTitle>{name} the {type}</CardTitle>
             <ButtonsDiv>
-                <NoiseButton>Make Noise</NoiseButton>
+                <NoiseButton onClick={handleSound}>Make Noise</NoiseButton>
                 <DeleteButton className='hidden' onClick={handleDelete}>Delete</DeleteButton>
             </ButtonsDiv>
         </CardWrapper>

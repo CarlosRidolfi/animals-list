@@ -1,9 +1,10 @@
 import { Animal } from './types'
+import React from 'react';
 
 export const initialAnimals: Animal[] = [
   {
     id: 1,
-    type: 'pig',
+    type: 'duck',
     name: 'Stinky',
   },
   {
@@ -13,12 +14,9 @@ export const initialAnimals: Animal[] = [
   },
   {
     id: 3,
-    type: 'cow',
-    name: 'Betsy',
-  },
-  {
-    id: 4,
     type: 'sheep',
     name: 'Wooly',
   }
 ]
+
+export const AnimalsContext = React.createContext(initialAnimals);

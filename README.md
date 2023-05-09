@@ -7,25 +7,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Requirements
-
-## UI/UX
-
-- The UI should look like the mockup in /mocks.
-- Clicking the "Make Noise" button should cause the noise to be displayed briefly and fade away.
-
-### Delete Button
-
-- Add a "Delete" button to the right of the "Make Noise" button
-- The delete button should only show when you hover on an animal
-- The delete button should remove the animal from the list
-
-### Add Button
-
-- Add an "Add" button below the last animal
-- The add button should create a random animal
-
-### React.Context
-
-- Move the animals into a React.Context, instead of passing as as prop to AnimalsView
+# How to use 
+## To add a new animal,  you just have to type the name of the animal and click "Add"
+![First image](https://github.com/CarlosRidolfi/animals-list/assets/27232476/c23154ef-6359-44e9-a9e6-be328c8b5bdd)
 

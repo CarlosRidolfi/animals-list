@@ -45,10 +45,16 @@ export function AnimalsView ({
 
     setAnimalsArray(oldArray => [...oldArray, 
       {
-        id: animals.length + 1, 
+        id: animalsArray.length + 1, 
         type: types[Math.floor(Math.random() * 3)], 
         name: value
       }]);
+  }
+
+  const handleDelete = (id: any) => {
+    console.log('id', id);
+    const newAnimalsArray = animalsArray.filter((line) => line.id !== id);
+    setAnimalsArray(newAnimalsArray);
   }
 
   return (
@@ -60,6 +66,7 @@ export function AnimalsView ({
             id={animal.id} 
             name={animal.name} 
             type={animal.type}
+            handleDelete={() => handleDelete(animal.id)}
           />
         ))}
       </CardsWrapper>

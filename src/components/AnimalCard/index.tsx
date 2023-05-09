@@ -75,15 +75,16 @@ type AnimalCardProps = {
     name: string;
     type: string;
     id: number;
+    handleDelete: any;
 }
 
-export const AnimalCard = ({name, id, type}: AnimalCardProps) => {
+export const AnimalCard = ({name, id, type, handleDelete}: AnimalCardProps) => {
     return (
         <CardWrapper key={id}>
             <CardTitle>{name} the {type}</CardTitle>
             <ButtonsDiv>
                 <NoiseButton>Make Noise</NoiseButton>
-                <DeleteButton className='hidden'>Delete</DeleteButton>
+                <DeleteButton className='hidden' onClick={handleDelete}>Delete</DeleteButton>
             </ButtonsDiv>
         </CardWrapper>
     )
